@@ -1,5 +1,7 @@
 db = db.getSiblingDB("movieDB");
 
+/*-----Part 0: Environment Setup-----*/
+
 db.movies.insertMany([
   { "title": "Inception", "director": "Christopher Nolan", "year": 2010, "rating": 8.8, "genres": ["Sci-Fi", "Action"], "plot": "A skilled thief steals secrets by entering dreams." },
   { "title": "The Dark Knight", "director": "Christopher Nolan", "year": 2008, "rating": 9.0, "genres": ["Action", "Crime"], "plot": "Batman faces a criminal mastermind spreading chaos." },
@@ -18,17 +20,24 @@ db.movies.insertMany([
   { "title": "Dune", "director": "Denis Villeneuve", "year": 2021, "rating": 8.0, "genres": ["Sci-Fi", "Adventure"], "plot": "A noble family fights for control of a desert planet." }
 ]);
 
+/*----Part 1: Baseline Performance----*/
+
 db.movies.find({ rating: { $gt: 8.0 } }).explain("executionStats");
 
+/*----Part 2: Single Field Index----*/
 db.movies.createIndex({ rating: 1 });
 
 db.movies.find({ rating: { $gt: 8.0 } }).explain("executionStats");
+
+/*----Part 3: Sorting Performance----*/
 
 db.movies.find().sort({ year: -1 }).explain("executionStats");
 
 db.movies.createIndex({ year: -1 });
 
 db.movies.find().sort({ year: -1 }).explain("executionStats");
+
+/*----Part 4: Compound Index----*/
 
 db.movies.createIndex({ director: 1, year: 1 });
 
@@ -37,16 +46,21 @@ db.movies.find({
   year: { $gt: 2010 }
 });
 
+/*----Part 5: Covered Query----*/
+
 db.movies.find(
   { year: { $gt: 2010 } },
   { _id: 0, year: 1 }
 ).explain("executionStats");
 
+/*----Part 6: Text Search----*/
 db.movies.createIndex({ plot: "text" });
 
 db.movies.find({
   $text: { $search: "dream crime desert" }
 });
+
+/*----Part 7: Maintenance----*/
 
 db.movies.getIndexes();
 
