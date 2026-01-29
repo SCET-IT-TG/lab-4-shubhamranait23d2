@@ -5,73 +5,64 @@
 // Switch to fresh database
 db = db.getSiblingDB("movieDB");
 
-// Populate collection
+// Populate collection with DIFFERENT VALUES
 db.movies.insertMany([
-  { "title": "3 Idiots", "director": "Rajkumar Hirani", "year": 2009, "rating": 8.4, "genres": ["Comedy", "Drama"], "plot": "Two friends start a quest for a lost buddy who was once an optimistic engineering student." },
-  { "title": "Sholay", "director": "Ramesh Sippy", "year": 1975, "rating": 8.1, "genres": ["Action", "Adventure"], "plot": "After his family is murdered by a notorious bandit, a former police officer enlists the services of two outlaws to capture him." },
-  { "title": "Baahubali: The Beginning", "director": "S.S. Rajamouli", "year": 2015, "rating": 8.0, "genres": ["Action", "Drama"], "plot": "In ancient India, an adventurous and daring man becomes involved in a decades-old feud between two warring peoples." },
-  { "title": "Dangal", "director": "Nitesh Tiwari", "year": 2016, "rating": 8.3, "genres": ["Biography", "Sport"], "plot": "Former wrestler Mahavir Singh Phogat and his two wrestler daughters struggle towards glory at the Commonwealth Games." },
-  { "title": "Lagaan", "director": "Ashutosh Gowariker", "year": 2001, "rating": 8.1, "genres": ["Drama", "Sport"], "plot": "The people of a small village in Victorian India stake their future on a game of cricket against their ruthless British rulers." },
-  { "title": "Dilwale Dulhania Le Jayenge", "director": "Aditya Chopra", "year": 1995, "rating": 8.0, "genres": ["Romance", "Drama"], "plot": "When Raj meets Simran in Europe, it isn't love at first sight but when she moves to India for an arranged marriage, love strikes." },
-  { "title": "RRR", "director": "S.S. Rajamouli", "year": 2022, "rating": 7.8, "genres": ["Action", "Drama"], "plot": "A fearless revolutionary and an officer in the British force decide to join forces against the mighty British Empire." },
-  { "title": "Gully Boy", "director": "Zoya Akhtar", "year": 2019, "rating": 7.9, "genres": ["Drama", "Music"], "plot": "A coming-of-age story based on the lives of street rappers in Mumbai." },
-  { "title": "K.G.F: Chapter 1", "director": "Prashanth Neel", "year": 2018, "rating": 8.2, "genres": ["Action", "Crime"], "plot": "In the 1970s, a gangster goes undercover as a slave to assassinate the owner of a notorious gold mine." },
-  { "title": "Swades", "director": "Ashutosh Gowariker", "year": 2004, "rating": 8.1, "genres": ["Drama"], "plot": "A successful Indian scientist returns to an Indian village to take his nanny to America with him and in the process rediscovers his roots." },
-  { "title": "Drishyam", "director": "Nishikant Kamat", "year": 2015, "rating": 8.2, "genres": ["Thriller", "Crime"], "plot": "Desperate measures are taken by a man who tries to save his family from the dark side of the law after they commit an unexpected crime." },
-  { "title": "Zindagi Na Milegi Dobara", "director": "Zoya Akhtar", "year": 2011, "rating": 8.2, "genres": ["Comedy", "Drama"], "plot": "Three friends decide to turn their fantasy vacation into reality after one of their friends gets engaged." },
-  { "title": "Kantaram", "director": "Rishab Shetty", "year": 2022, "rating": 8.3, "genres": ["Action", "Thriller"], "plot": "When greed paves the way for betrayal, scheming, and murder, a young tribal reluctantly dons the traditions of his ancestors to seek justice." },
-  { "title": "Vikram", "director": "Lokesh Kanagaraj", "year": 2022, "rating": 8.3, "genres": ["Action", "Thriller"], "plot": "A special investigator discovers a case of serial killings is not what it seems to be, and leading down this path will end in a war." },
-  { "title": "PK", "director": "Rajkumar Hirani", "year": 2014, "rating": 8.1, "genres": ["Comedy", "Sci-Fi"], "plot": "An alien on Earth loses the only device he can use to communicate with his spaceship. His innocent nature and child-like questions force the country to evaluate the impact of religion on its people." }
+  { "title": "Inception", "director": "Christopher Nolan", "year": 2010, "rating": 8.8, "genres": ["Sci-Fi", "Action"], "plot": "A skilled thief steals secrets by entering dreams." },
+  { "title": "The Dark Knight", "director": "Christopher Nolan", "year": 2008, "rating": 9.0, "genres": ["Action", "Crime"], "plot": "Batman faces a criminal mastermind spreading chaos." },
+  { "title": "Interstellar", "director": "Christopher Nolan", "year": 2014, "rating": 8.6, "genres": ["Sci-Fi", "Drama"], "plot": "A team travels through a wormhole to save humanity." },
+  { "title": "Parasite", "director": "Bong Joon-ho", "year": 2019, "rating": 8.5, "genres": ["Thriller", "Drama"], "plot": "A poor family infiltrates a wealthy household." },
+  { "title": "Gladiator", "director": "Ridley Scott", "year": 2000, "rating": 8.5, "genres": ["Action", "Drama"], "plot": "A betrayed Roman general seeks revenge." },
+  { "title": "Whiplash", "director": "Damien Chazelle", "year": 2014, "rating": 8.5, "genres": ["Drama", "Music"], "plot": "A young drummer trains under a ruthless instructor." },
+  { "title": "Joker", "director": "Todd Phillips", "year": 2019, "rating": 8.4, "genres": ["Crime", "Drama"], "plot": "A failed comedian descends into madness." },
+  { "title": "Avengers: Endgame", "director": "Anthony Russo", "year": 2019, "rating": 8.4, "genres": ["Action", "Adventure"], "plot": "Heroes unite to reverse a catastrophic event." },
+  { "title": "The Matrix", "director": "Lana Wachowski", "year": 1999, "rating": 8.7, "genres": ["Sci-Fi", "Action"], "plot": "A hacker learns reality is a computer simulation." },
+  { "title": "Fight Club", "director": "David Fincher", "year": 1999, "rating": 8.8, "genres": ["Drama", "Thriller"], "plot": "An underground fight club evolves into chaos." },
+  { "title": "Forrest Gump", "director": "Robert Zemeckis", "year": 1994, "rating": 8.8, "genres": ["Drama", "Romance"], "plot": "A man experiences extraordinary moments in history." },
+  { "title": "The Social Network", "director": "David Fincher", "year": 2010, "rating": 7.8, "genres": ["Biography", "Drama"], "plot": "The creation of a global social media empire." },
+  { "title": "Mad Max: Fury Road", "director": "George Miller", "year": 2015, "rating": 8.1, "genres": ["Action", "Adventure"], "plot": "Survivors flee across a brutal desert wasteland." },
+  { "title": "The Godfather", "director": "Francis Ford Coppola", "year": 1972, "rating": 9.2, "genres": ["Crime", "Drama"], "plot": "A crime family transfers power to the next generation." },
+  { "title": "Dune", "director": "Denis Villeneuve", "year": 2021, "rating": 8.0, "genres": ["Sci-Fi", "Adventure"], "plot": "A noble family fights for control of a desert planet." }
 ]);
 
 // ===============================
 // Part 1: Baseline Performance
 // ===============================
 
-// Collection scan (no index)
 db.movies.find({ rating: { $gt: 8.0 } }).explain("executionStats");
 
 // ===============================
 // Part 2: Single Field Index
 // ===============================
 
-// Create index on rating
 db.movies.createIndex({ rating: 1 });
 
-// Optimized query
 db.movies.find({ rating: { $gt: 8.0 } }).explain("executionStats");
 
 // ===============================
 // Part 3: Sorting Performance
 // ===============================
 
-// Sort without index
 db.movies.find().sort({ year: -1 }).explain("executionStats");
 
-// Create index on year
 db.movies.createIndex({ year: -1 });
 
-// Sort with index
 db.movies.find().sort({ year: -1 }).explain("executionStats");
 
 // ===============================
 // Part 4: Compound Index
 // ===============================
 
-// Create compound index for director + year
 db.movies.createIndex({ director: 1, year: 1 });
 
-// Query using compound index
 db.movies.find({
-  director: "S.S. Rajamouli",
-  year: { $gt: 2018 }
+  director: "Christopher Nolan",
+  year: { $gt: 2010 }
 });
 
 // ===============================
 // Part 5: Covered Query
 // ===============================
 
-// Covered query (index-only)
 db.movies.find(
   { year: { $gt: 2010 } },
   { _id: 0, year: 1 }
@@ -81,17 +72,14 @@ db.movies.find(
 // Part 6: Text Search
 // ===============================
 
-// Create text index on plot
 db.movies.createIndex({ plot: "text" });
 
-// Text search query
 db.movies.find({
-  $text: { $search: "cricket gangster" }
+  $text: { $search: "dream crime desert" }
 });
 
 // ===============================
 // Part 7: Maintenance
 // ===============================
 
-// List all indexes
 db.movies.getIndexes();
