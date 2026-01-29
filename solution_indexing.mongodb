@@ -1,21 +1,21 @@
 db.getSiblingDB("movieDB");
 
 db.movies.insertMany([
-  { "title": "Student Life", "director": "Aman Verma", "year": 2010, "rating": 8.5, "genres": ["Comedy", "Drama"], "plot": "Three college friends reunite to search for a missing classmate who inspired them during engineering days." },
-  { "title": "Desert Warriors", "director": "Mahesh Rao", "year": 1980, "rating": 8.2, "genres": ["Action", "Adventure"], "plot": "A retired officer hires two mercenaries to hunt down a ruthless outlaw terrorizing villages." },
-  { "title": "Empire Rising", "director": "K. Narayan", "year": 2016, "rating": 8.1, "genres": ["Action", "Drama"], "plot": "A brave man becomes entangled in an ancient rivalry between two powerful kingdoms." },
-  { "title": "Golden Mat", "director": "Ritu Malhotra", "year": 2017, "rating": 8.4, "genres": ["Biography", "Sport"], "plot": "A former athlete trains his daughters to compete on the world stage." },
-  { "title": "Village Eleven", "director": "Samar Dutta", "year": 2003, "rating": 8.0, "genres": ["Drama", "Sport"], "plot": "A small village challenges colonial rulers to a high-stakes cricket match." },
-  { "title": "Forever Together", "director": "Neha Kapoor", "year": 1998, "rating": 8.1, "genres": ["Romance", "Drama"], "plot": "Two young lovers fight tradition and distance to stay together." },
-  { "title": "Revolt 1920", "director": "K. Narayan", "year": 2021, "rating": 7.9, "genres": ["Action", "Drama"], "plot": "Two unlikely allies rise against an oppressive empire." },
-  { "title": "Street Rhymes", "director": "Zara Khan", "year": 2020, "rating": 8.0, "genres": ["Drama", "Music"], "plot": "A young rapper finds his voice on the streets of a big city." },
-  { "title": "Gold City", "director": "Arjun Mehta", "year": 2019, "rating": 8.3, "genres": ["Action", "Crime"], "plot": "A feared gangster infiltrates a gold mine empire to claim power." },
-  { "title": "Back to Soil", "director": "Samar Dutta", "year": 2006, "rating": 8.2, "genres": ["Drama"], "plot": "A scientist returns home and reconnects with his rural roots." },
-  { "title": "Hidden Truth", "director": "Manoj Iyer", "year": 2016, "rating": 8.3, "genres": ["Thriller", "Crime"], "plot": "A father goes to extreme lengths to protect his family after a crime." },
-  { "title": "One Last Trip", "director": "Zara Khan", "year": 2012, "rating": 8.1, "genres": ["Comedy", "Drama"], "plot": "Three friends take a life-changing vacation before marriage." },
-  { "title": "Forest Law", "director": "Ravi Shekar", "year": 2023, "rating": 8.4, "genres": ["Action", "Thriller"], "plot": "A tribal warrior rises against betrayal and injustice." },
-  { "title": "Agent Zero", "director": "Lokesh Anand", "year": 2023, "rating": 8.4, "genres": ["Action", "Thriller"], "plot": "An investigator uncovers a conspiracy behind a series of murders." },
-  { "title": "Visitor X", "director": "Aman Verma", "year": 2015, "rating": 8.2, "genres": ["Comedy", "Sci-Fi"], "plot": "An alien explores human beliefs while searching for a lost device." }
+  { "title": "Neon Campus", "director": "Ishaan Mallick", "year": 2012, "rating": 8.6, "genres": ["Comedy", "Drama"], "plot": "Four university friends reunite to track down a mentor who once changed their lives." },
+  { "title": "Iron Dunes", "director": "Harpreet Singh", "year": 1978, "rating": 8.3, "genres": ["Action", "Adventure"], "plot": "A former sheriff recruits two rogues to stop a desert warlord." },
+  { "title": "Crown of Fire", "director": "Meera Iyer", "year": 2014, "rating": 8.1, "genres": ["Action", "Drama"], "plot": "A fearless youth is pulled into a generational conflict between rival clans." },
+  { "title": "Mat of Champions", "director": "Dev Kulkarni", "year": 2018, "rating": 8.5, "genres": ["Biography", "Sport"], "plot": "An ex-coach trains his daughters to dominate international tournaments." },
+  { "title": "Willow Field", "director": "Ananya Bose", "year": 2005, "rating": 8.2, "genres": ["Drama", "Sport"], "plot": "A farming community challenges colonial officers in a decisive cricket match." },
+  { "title": "Across the Monsoon", "director": "Rhea Menon", "year": 1999, "rating": 8.1, "genres": ["Romance", "Drama"], "plot": "Two lovers separated by tradition fight to reunite." },
+  { "title": "Twin Flames", "director": "Meera Iyer", "year": 2020, "rating": 7.9, "genres": ["Action", "Drama"], "plot": "Two strangers form an alliance to spark a rebellion." },
+  { "title": "Metro Mic", "director": "Kabir Qureshi", "year": 2021, "rating": 8.0, "genres": ["Drama", "Music"], "plot": "A street poet rises through underground rap battles." },
+  { "title": "Black Quarry", "director": "Soham Patil", "year": 2017, "rating": 8.4, "genres": ["Action", "Crime"], "plot": "A ruthless enforcer infiltrates a mining syndicate to seize control." },
+  { "title": "Roots Rewritten", "director": "Ananya Bose", "year": 2007, "rating": 8.3, "genres": ["Drama"], "plot": "A technologist returns to his hometown and rediscovers purpose." },
+  { "title": "Silent Alibi", "director": "Kunal Deshpande", "year": 2016, "rating": 8.4, "genres": ["Thriller", "Crime"], "plot": "A calculated plan unfolds to shield a family from legal ruin." },
+  { "title": "Before the Vows", "director": "Kabir Qureshi", "year": 2013, "rating": 8.2, "genres": ["Comedy", "Drama"], "plot": "Three friends embark on a final adventure before marriage." },
+  { "title": "Verdant Oath", "director": "Ritvik Sen", "year": 2024, "rating": 8.5, "genres": ["Action", "Thriller"], "plot": "An indigenous guardian rises against betrayal and exploitation." },
+  { "title": "Cipher Hunt", "director": "Armaan Kohli", "year": 2024, "rating": 8.6, "genres": ["Action", "Thriller"], "plot": "An intelligence officer uncovers a coded trail behind serial crimes." },
+  { "title": "Starbound Visitor", "director": "Ishaan Mallick", "year": 2016, "rating": 8.3, "genres": ["Comedy", "Sci-Fi"], "plot": "An extraterrestrial studies humanity while searching for lost technology." }
 ]);
 
 db.movies.find({ rating: { $gt: 8.0 } }).explain("executionStats");
@@ -33,19 +33,19 @@ db.movies.find().sort({ year: -1 }).explain("executionStats");
 db.movies.createIndex({ director: 1, year: 1 });
 
 db.movies.find({
-  director: "K. Narayan",
+  director: "Meera Iyer",
   year: { $gt: 2018 }
 });
 
 db.movies.find(
-  { year: { $gt: 2011 } },
+  { year: { $gt: 2012 } },
   { year: 1, _id: 0 }
 ).explain("executionStats");
 
 db.movies.createIndex({ plot: "text" });
 
 db.movies.find({
-  $text: { $search: "cricket gangster" }
+  $text: { $search: "cricket quarry" }
 });
 
 db.movies.getIndexes();
